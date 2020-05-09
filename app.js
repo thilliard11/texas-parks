@@ -19,8 +19,7 @@ var commentRoutes 	 = require("./routes/comments"),
 //seedDB();
 mongoose.connect('mongodb+srv://thilliard:%21tuW4%23%40WUS9ZJCt@cluster0-luarx.mongodb.net/test?retryWrites=true&w=majority', {
 	useNewUrlParser: true, 
-	useUnifiedTopology: true,
-	useCreateIndex: true
+	useUnifiedTopology: true
 })
     .then(() => console.log('MongoDB Connected...'))
     .catch((err) => console.log(err))
