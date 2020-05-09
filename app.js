@@ -17,7 +17,11 @@ var commentRoutes 	 = require("./routes/comments"),
 	indexRoutes 	 = require("./routes/index");
 
 //seedDB();
-mongoose.connect('mongodb://localhost/yelp_camp_v9', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb+srv://thilliard:%21tuW4%23%40WUS9ZJCt@cluster0-luarx.mongodb.net/test?retryWrites=true&w=majority', {
+	useNewUrlParser: true, 
+	useUnifiedTopology: true,
+	useCreateIndex: true
+})
     .then(() => console.log('MongoDB Connected...'))
     .catch((err) => console.log(err))
 
