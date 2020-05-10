@@ -15,13 +15,12 @@ var express      = require("express"),
 var commentRoutes 	 = require("./routes/comments"),
 	campgroundRoutes = require("./routes/campgrounds"),
 	indexRoutes 	 = require("./routes/index");
-
 //seedDB();
-mongoose.connect('mongodb+srv://thilliard:%21tuW4%23%40WUS9ZJCt@cluster0-luarx.mongodb.net/test?retryWrites=true&w=majority', {
-	useNewUrlParser: true, 
+mongoose.connect(process.env.DATABASEURL, {
+	useNewUrlParser: true,
 	useUnifiedTopology: true
 })
-    .then(() => console.log('MongoDB Connected...'))
+	.then(() => console.log('MongoDB Connected...'))
     .catch((err) => console.log(err))
 
 app.use(bodyParser.urlencoded({extended: true}));
