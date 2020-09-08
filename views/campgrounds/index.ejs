@@ -1,17 +1,15 @@
 <%- include("../partials/header")%>
-
+<div class="container">
   <header class="jumbotron">
-    <div class="container"></div>
+    <div class="container">
       <h1>Welcome to Texas Parks</h1>
       <p>The best spots Texas has to offer!</p>
       <p>
-        <a class="btn btn-primary btn-lg" href="campgrounds/new"
-          >Add a new Park</a
-        >
+        <a class="btn btn-primary btn-lg" href="campgrounds/new">Add a new Park</a>
       </p>
     </div>
   </header>
-  <div class="row text-center" style="display: flex; flex-wrap: wrap">
+  <div class="row text-center" style="display: flex; flex-wrap: wrap;">
     <%campgrounds.forEach(function(campground) { %>
     <div class="col-md-3 col-sm-6">
       <div class="thumbnail">
@@ -21,12 +19,13 @@
         <h4><%=campground.name%></h4>
       </div>
       <p>
-        <a href="/campgrounds/<%= campground._id%> " class="btn btn-primary"
-          >More Info</a
-        >
+        <a href="/campgrounds/<%= campground._id%> " class="btn btn-primary">More Info</a>
       </p>
+    </div>
 
     <% }); %>
   </div>
+</div>
+
 
 <%- include("../partials/footer")%>
