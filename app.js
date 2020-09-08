@@ -16,13 +16,16 @@ var commentRoutes = require("./routes/comments"),
   campgroundRoutes = require("./routes/campgrounds"),
   indexRoutes = require("./routes/index");
 //seedDB();
-mongoose.connect(process.env.DATABASEURL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-  .then(() => console.log('MongoDB Connected...'))
-  .catch((err) => console.log(err))
-
+// mongoose.connect(process.env.DATABASEURL, {
+// 	useNewUrlParser: true,
+// 	useUnifiedTopology: true
+// })
+// 	.then(() => console.log('MongoDB Connected...'))
+//     .catch((err) => console.log(err))
+mongoose
+  .connect("mongodb://localhost/yelp_camp_v9")
+  .then(() => console.log("MongoDB Connected..."))
+  .catch((err) => console.log(err));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
